@@ -10,7 +10,7 @@ public class PatternSwitcher
         _npc = npc;
         _player = player;
         _player.RatingChanged += ChangeBehavioralPattern;
-        ChangeBehavioralPattern(_player.Rating);
+        ChangeBehavioralPattern(_player.Reputation.TotalReputation);
     }
 
     private void ChangeBehavioralPattern(int playerRating)
