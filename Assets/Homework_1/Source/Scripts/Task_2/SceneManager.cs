@@ -5,7 +5,7 @@ namespace TraderPattern
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private Player _player;
-        [SerializeField] private Npc _trader;
+        [SerializeField] private Trader _trader;
 
         private PatternSwitcher _switcher;
 

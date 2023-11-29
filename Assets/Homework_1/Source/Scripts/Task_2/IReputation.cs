@@ -1,6 +1,6 @@
 namespace TraderPattern
 {
-    public interface IReputable
+    public interface IReputation
     {
         int Rating { get; }
     }

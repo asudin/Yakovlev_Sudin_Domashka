@@ -3,44 +3,34 @@ using UnityEngine;
 
 namespace TraderPattern
 {
-    public class Player : MonoBehaviour, IReputable
+    public class Player : MonoBehaviour, IReputation
     {
-        private const int RatingChangeValue = 1;
+        private const int StartingReputationValue = 5;
 
         [SerializeField, Range(0, 10)] private int _rating = 5;
+        private Reputation _reputation;
 
         public int Rating => _rating;
         public event Action<int> RatingChanged;
+
+        private void Awake()
+        {
+            _reputation = new Reputation(StartingReputationValue);
+        }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                IncreaseRating(RatingChangeValue);
+                _reputation.IncreaseRating();
+                RatingChanged?.Invoke(_reputation.TotalReputation);
             }
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                DecreaseRating(RatingChangeValue);
+                _reputation.DecreaseRating();
+                RatingChanged?.Invoke(_reputation.TotalReputation);
             }
-        }
-
-        private void IncreaseRating(int value)
-        {
-            if (value < 0)
-                return;
-
-            _rating += value;
-            RatingChanged?.Invoke(_rating);
-        }
-
-        private void DecreaseRating(int value)
-        {
-            if (value < 0)
-                return;
-
-            _rating -= value;
-            RatingChanged?.Invoke(_rating);
         }
     }
 }

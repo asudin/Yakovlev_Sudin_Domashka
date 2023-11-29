@@ -2,10 +2,10 @@ using TraderPattern;
 
 public class PatternSwitcher
 {
-    private readonly Npc _npc;
+    private readonly Trader _npc;
     private readonly Player _player;
 
-    public PatternSwitcher(Npc npc, Player player)
+    public PatternSwitcher(Trader npc, Player player)
     {
         _npc = npc;
         _player = player;
