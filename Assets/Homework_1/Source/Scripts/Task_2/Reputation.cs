@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace TraderPattern
 {
     public class Reputation

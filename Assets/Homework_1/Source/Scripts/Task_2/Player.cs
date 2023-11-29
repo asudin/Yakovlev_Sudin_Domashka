@@ -21,12 +21,14 @@ namespace TraderPattern
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
+                Debug.Log($"Reputation: {_reputation.TotalReputation}");
                 _reputation.IncreaseRating();
                 RatingChanged?.Invoke(_reputation.TotalReputation);
             }
 
             if (Input.GetKeyDown(KeyCode.S))
             {
+                Debug.Log($"Reputation: {_reputation.TotalReputation}");
                 _reputation.DecreaseRating();
                 RatingChanged?.Invoke(_reputation.TotalReputation);
             }
