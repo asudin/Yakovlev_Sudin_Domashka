@@ -20,8 +20,7 @@ public class BallClicker : MonoBehaviour
         if (Input.GetMouseButton(0) || 
             Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out var hit))
         {
-            hit.transform.TryGetComponent<Ball>(out var ball);
-            ball?.Select();
+
         }
     }
 }
